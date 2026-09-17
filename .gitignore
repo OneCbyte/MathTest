@@ -1,6 +1,7 @@
 .vs/
 Debug/
 Release/
+packages/
 
 x64/
 *.exe
