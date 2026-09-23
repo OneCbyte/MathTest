@@ -1,7 +1,13 @@
 ﻿#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include "lib.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    srand(static_cast<unsigned int>(time(nullptr)));
+    MathTest test(5, 1, 20);
+    test.run();
+    return 0;
 }
 
