@@ -3,7 +3,6 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
 
 int random_number(int min, int max)
 {
@@ -124,11 +123,11 @@ void MathTest::run()
 {
     for (int i = 0; i < count; i++)
     {
-        cout << tasks[i].num_1 << " " << tasks[i].operation << " "
+        std::cout << tasks[i].num_1 << " " << tasks[i].operation << " "
             << tasks[i].num_2 << " = ";
 
         int answer;
-        cin >> answer;
+        std::cin >> answer;
         check_answer(i, answer);
     }
 
@@ -137,49 +136,49 @@ void MathTest::run()
 
 void MathTest::show_statistics()
 {
-    cout << "|          No |";
+    std::cout << "|          No |";
 
     for (int i = 0; i < count; i++)
-        cout << " " << i + 1 << " |";
+        std::cout << " " << i + 1 << " |";
 
-    cout << endl;
-    cout << "+---------------------------------------------------------------+" << endl;
+    std::cout << "\n";
+    std::cout << "+---------------------------------------------------------------+";
 
-    cout << "|    Question |";
+    std::cout << "|    Question |";
 
     for (int i = 0; i < count; i++)
     {
-        cout << " " << tasks[i].num_1 << " " << tasks[i].operation
+        std::cout << " " << tasks[i].num_1 << " " << tasks[i].operation
             << " " << tasks[i].num_2 << " |";
     }
 
-    cout << endl;
-    cout << "| True Answer |";
+    std::cout << "\n";
+    std::cout << "| True Answer |";
 
     for (int i = 0; i < count; i++)
-        cout << " " << tasks[i].answer << " |";
+        std::cout << " " << tasks[i].answer << " |";
 
-    cout << endl;
-    cout << "| Your Answer |";
+    std::cout << "\n";
+    std::cout << "| Your Answer |";
 
     for (int i = 0; i < count; i++)
-        cout << " " << user_answers[i] << " |";
+        std::cout << " " << user_answers[i] << " |";
 
-    cout << endl;
-    cout << "|      Result |";
+    std::cout << "\n";
+    std::cout << "|      Result |";
 
     for (int i = 0; i < count; i++)
     {
         if (user_answers[i] == tasks[i].answer)
-            cout << "       + |";
+            std::cout << "       + |";
         else
-            cout << "       - |";
+            std::cout << "       - |";
     }
 
-    cout << endl << endl;
+    std::cout << "\n\n";
 
-    cout << "Total Result: " << correct_count << " / " << count;
-    cout << " (mark: " << get_mark(correct_count, count) << ")" << endl;
+    std::cout << "Total Result: " << correct_count << " / " << count;
+    std::cout << " (mark: " << get_mark(correct_count, count) << ")";
 }
 
 int MathTest::get_count() const
