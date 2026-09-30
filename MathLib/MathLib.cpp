@@ -46,6 +46,11 @@ Task::Task()
 
 Task::Task(int min, int max, char selected_operation)
 {
+    if (min > max) {
+        int tmp = min;
+        min = max;
+        max = tmp;
+    }
     operation = selected_operation;
 
     if (operation == '\0')
